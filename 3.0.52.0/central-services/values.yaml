@@ -83,7 +83,7 @@ env:
 #
 #  # Whether to run StackRox in offline mode. When run in offline mode, no connections to external
 #  # endpoints will be made.
-  offlineMode: true
+  offlineMode: false
 #
 #  # The proxy configuration for Central and Scanner, specified either as an embedded YAML
 #  # directionary, or as an (expandable) string.
@@ -190,7 +190,7 @@ scanner:
 #
 #  # Default number of scanner replicas created upon startup. The actual number might be higher
 #  # or lower if autoscaling is enabled (see below).
-#  replicas: 3
+  replicas: 1
 #
 #  logLevel: INFO
 #
