@@ -1,5 +1,9 @@
 # argoCD Notes
 
+https://github.com/clemenko/argo
+
+From https://github.com/stackrox/helm-charts
+
 ## setup argo
 
 ```bash
@@ -55,8 +59,8 @@ kubectl create namespace stackrox
 argocd app create stackrox-central-services --repo https://github.com/clemenko/argo.git --path 3.0.52.0/central-services --dest-server https://kubernetes.default.svc --dest-namespace stackrox --values values.yaml -p imagePullSecrets.username=$username -p imagePullSecrets.password=$password -p central.adminPassword.value=Pa22word
 #--helm-set-file licenseKey=stackrox.lic -p imagePullSecrets.allowNone=true
 
-# adding sensor
-argocd app create stackrox-sensor --repo https://github.com/clemenko/argo.git --path 3.0.52.0/sensor --dest-server https://kubernetes.default.svc --dest-namespace stackrox --values values.yaml -p imagePullSecrets.username=$username -p imagePullSecrets.password=$password -p central.adminPassword.value=Pa22word
+# adding sensor not working
+# argocd app create stackrox-sensor --repo https://github.com/clemenko/argo.git --path 3.0.52.0/sensor --dest-server https://kubernetes.default.svc --dest-namespace stackrox --values values.yaml -p imagePullSecrets.username=$username -p imagePullSecrets.password=$password -p central.adminPassword.value=Pa22word
 
 # add traefik ingressroutetcp
 kubectl apply -f https://raw.githubusercontent.com/clemenko/k8s_yaml/master/stackrox_traefik_crd.yml
